@@ -1,2 +1,5 @@
 Django~=5.0.4
 python-decouple
+django-taggit
+markdown
+psycopg2-binary
