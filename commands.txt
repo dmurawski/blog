@@ -15,3 +15,6 @@ ASGI:
 dumpdata:
 python manage.py dumpdata --indent=2 --output=mysite_data.json
 python -Xutf8 manage.py dumpdata --indent=2 --output=mysite_data.json
+
+Wczytanie dumpdata:
+python manage.py loaddata --exclude contenttypes mysite_data.json
