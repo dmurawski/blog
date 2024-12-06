@@ -1,14 +1,10 @@
+from django.contrib.postgres.search import (SearchQuery, SearchRank,
+                                            SearchVector, TrigramSimilarity)
 from django.core.mail import send_mail
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.db.models import Count
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
-from django.db.models import Count
-from django.contrib.postgres.search import (
-    SearchVector,
-    SearchQuery,
-    SearchRank,
-    TrigramSimilarity,
-)
 from taggit.models import Tag
 
 from .forms import CommentForm, EmailPostForm, SearchForm
