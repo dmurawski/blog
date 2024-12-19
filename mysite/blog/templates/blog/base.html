@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock title %}</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
     <!-- bootstrap css -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <!-- custom css -->
@@ -17,7 +19,7 @@
       {% endblock %}
     </div>
     <div>
-      <h2>My blog</h2>
+      <h2>My blog <i class="fas fa-star"></i></h2>
       <p class="primary">
         This is my blog.
         I've written {% total_post %} posts so far.
