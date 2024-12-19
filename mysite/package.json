@@ -1,0 +1,16 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "blog templates",
+  "main": "index.js",
+  "scripts": {
+    "sass:build": "sass --no-source-map static/scss:static/css",
+    "sass:watch": "sass --no-source-map --watch static/scss:static/css"
+  },
+  "author": "Damian Murawski",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.83.0"
+  }
+}
