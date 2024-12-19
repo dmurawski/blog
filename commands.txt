@@ -18,3 +18,6 @@ python -Xutf8 manage.py dumpdata --indent=2 --output=mysite_data.json
 
 Wczytanie dumpdata:
 python manage.py loaddata --exclude contenttypes mysite_data.json
+
+postgres docker:
+docker run --name=blog_db -e POSRGRES_DB=my_blog -e POSTGRES_USER=my_blog -e POSTGRES_PASSWORD=my_blog -p 5432:5432 -d postgres:16.2
