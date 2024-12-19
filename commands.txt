@@ -28,3 +28,8 @@ BOOTSTRAP SASS
 
 npm run sass:watch
 npm run sass:build
+
+
+djhtml
+
+djhtml --tabwidth 2
