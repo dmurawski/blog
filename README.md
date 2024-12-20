@@ -1,6 +1,7 @@
 # Blog - Django Blog z Bootstrap 5, Django-Taggit, PostgreSQL i Sass
 
 Aplikacja blogowa oparta na Django 5, Bootstrap 5, Django-Taggit, PostgreSQL i Sass. Blog oferuje nowoczesny interfejs i funkcjonalne zaplecze z możliwością personalizacji.
+![Blog picture](blog.png)
 
 ### Technologie
 - **Django 5**: Framework webowy w Pythonie, który pozwala na szybkie budowanie solidnych aplikacji webowych.
