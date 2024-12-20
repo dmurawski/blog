@@ -9,11 +9,53 @@
       "{{ post.title }}" was successfully sent to {{ form.cleaned_data.to }}.
     </p>
   {% else %}
-    <h1>Share "{{ post.title }}" by e-mail</h1>
-    <form method="post">
-      {{ form.as_p }}
-      {% csrf_token %}
-      <input type="submit" value="Send e-mail">
-    </form>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h1 class="text-primary">Share "{{ post.title }}" by e-mail</h1>
+          <hr>
+          <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control bg-light"
+                name="{{ form.name.html_name }}"
+                placeholder="Your Name">
+            </div>
+
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control bg-light"
+                name="{{ form.email.html_name }}"
+                placeholder="Your Email">
+            </div>
+
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control bg-light"
+                name="{{ form.to.html_name }}"
+                placeholder="Recipient's Email">
+            </div>
+
+            <div class="mb-3">
+              <textarea
+                class="form-control bg-light"
+                name="{{ form.comments.html_name }}"
+                placeholder="Add a comment (optional)"></textarea>
+            </div>
+
+            <div class="d-grid gap-2">
+              <input type="submit" value="Send e-mail" class="btn btn-primary text-white">
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
   {% endif %}
 {% endblock content %}

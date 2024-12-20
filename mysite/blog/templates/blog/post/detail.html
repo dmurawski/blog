@@ -3,17 +3,18 @@
 {% block title %}{{ post.title }}{% endblock title %}
 
 {% block content %}
-  <h1>{{ post.title }}</h1>
+  <h1 class="text-primary">{{ post.title }}</h1>
+  <hr>
   <p>
-    Tags:
+    <span class="text-primary fw-bold">Tags:</span>
     {% for tag in post.tags.all %}
       <a href="{% url "blog:post_list_by_tag" tag.slug %}">
         {{ tag.name }}
       </a>{% if not forloop.last %}, {% endif %}
     {% endfor %}
   </p>
-  <p>
-    Published {{ post.publish }} by {{ post.author }}
+  <p class="fst-italic text-secondary">
+    Published {{ post.publish }} by <span class="text-primary">{{ post.author }}</span>
   </p>
   {{ post.body|markdown }}
   <p>
@@ -38,12 +39,16 @@
     </h2>
   {% endwith %}
   {% for comment in comments %}
-    <div>
-      <p>
-        Comment {{ forloop.counter }} by {{ comment.name }}
-        {{ comment.created }}
-      </p>
-      {{ comment.body }}
+    <div class="card my-4">
+      <div class="card-header">
+        <span class="fst-italic text-secondary">
+          Comment {{ forloop.counter }} by <span class="text-primary">{{ comment.name }}</span>
+          {{ comment.created }}
+        </span>
+      </div>
+      <div class="card-body">
+        {{ comment.body }}
+      </div>
     </div>
   {% empty %}
     <p>There are no comments.</p>

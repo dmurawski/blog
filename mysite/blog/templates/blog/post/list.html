@@ -4,6 +4,7 @@
 
 {% block content %}
   <h1>My blog</h1>
+  <hr>
   {% if tag %}
     <h2>Posts tagged with "{{ tag.name }}"</h2>
   {% endif %}
@@ -25,6 +26,7 @@
       Published {{ post.publish }} by {{ post.author }}
     </p>
     {{ post.body|markdown|truncatewords_html:30 }}
+    <hr>
   {% endfor %}
   {% include "pagination.html" with page=posts %}
 {% endblock content %}

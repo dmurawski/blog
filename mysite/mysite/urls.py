@@ -3,6 +3,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 
 from blog.sitemaps import PostSitemap, TagSitemap
+from django.views.generic import TemplateView
 
 sitemaps = {
     "posts": PostSitemap,
@@ -17,4 +18,5 @@ urlpatterns = [
         {"sitemaps": sitemaps},
         name="django.contrib.sitemaps.views.sitemap",
     ),
+    path("", TemplateView.as_view(template_name="home.html"), name="home"),
 ]

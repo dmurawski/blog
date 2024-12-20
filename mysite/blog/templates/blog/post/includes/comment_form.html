@@ -1,10 +1,36 @@
+
 <h2>Add a new comment</h2>
 <form action="{% url 'blog:post_comment' post.id %}" method="post">
-  {{ form.name.as_field_group }}
-  {{ form.email.as_field_group }}
-  {{ form.body.as_field_group }}
   {% csrf_token %}
-  <p>
-    <input type="submit" value="Add comment">
-  </p>
+
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control bg-light"
+      name="{{ form.name.html_name }}"
+      value="{{ form.name.value|default_if_none:'' }}"
+      id="{{ form.name.id_for_label }}"
+      placeholder="Enter your name">
+  </div>
+
+  <div class="mb-3">
+    <input
+      type="email"
+      class="form-control bg-light"
+      name="{{ form.email.html_name }}"
+      value="{{ form.email.value|default_if_none:'' }}"
+      id="{{ form.email.id_for_label }}"
+      placeholder="Enter your email">
+  </div>
+
+  <div class="mb-3">
+    <textarea
+      class="form-control bg-light"
+      name="{{ form.body.html_name }}"
+      id="{{ form.body.id_for_label }}"
+      placeholder="Enter your comment"></textarea>
+  </div>
+  <div class="d-grid gap-2">
+    <input type="submit" value="Add comment" class="btn btn-primary text-white">
+  </div>
 </form>
